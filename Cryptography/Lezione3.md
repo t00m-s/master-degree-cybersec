@@ -106,3 +106,5 @@ I=\begin{bmatrix}
 0 & 1
 \end{bmatrix}
 $$
+Hill cipher is a linear transformation, meaning that if an attacker knows enough pairs plain-text $\rightarrow$ cipher-text he can break the cipher by "finding" the key calculating the inverse of the plain-text.
+Modern ciphers, such as *RSA*, are non-linear to prevent this type of attacks.
