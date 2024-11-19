@@ -62,4 +62,30 @@ The attacker has then to guess the plain text.
 # Probability distribution on cipher texts
 Let's first assume the following notation:
 $p_{p(x)}=$ probability of a plain text $x$ to occur.
-$p_{K(k)}=$ probability of a given key $k$ to be used.
+$p_{K(k)}=$ probability of a given key $k$ to be used for encryption.
+
+We can then compute the $p_{c(y)}$, that is the probability that the cipher text $y$ exists:
+$$
+p_{c(y)}=\sum_{k\in K, \exists x|E_{K(x)}=y}p_{K(k)}p_{p(D_k(y))}
+$$
+Given a cipher text $y$ we look for all the keys that can give such a cipher text from some plain text $x$. We then sum the probability of all such keys times the probability of the corresponding plain text.
+## Conditional probability
+The conditional probability of a cipher text $y$ given a plain text $y$ can be computed as:
+$$
+p_{c(y|x)}=\sum_{k\in K, E_k(x)=y}p_{K(k)}
+$$
+That is the sum of all probabilities that key $k$ is used.
+Using Bayes theorem we can compute the likelihood of a plain text given a cipher text:
+Given the original Bayes theorem formula:
+$$
+\mathbb{P}[x|y]=\frac{\mathbb{P}[x]\mathbb{P}[y|x]}{\mathbb{P}[y]}
+$$
+Thus:
+$$
+p_{p(x|y)}=\frac{p_{p(x)}p_{c(y|x)}}{p_{c(y)}}
+$$
+What does this give us?
+The definition of a perfect cipher:
+A cipher is perfect i.f.f. $p_{p(x|y)}=p_{p(x)}$, $\forall x \in P$, $\forall y \in C$.
+This means that knowing a cipher text $y$ will not give the attacker any new information.
+Generally speaking, for each pair $i,j$ where $i\neq j$: $p(x_i|y_j)=p(x_i)$.

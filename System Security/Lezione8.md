@@ -64,3 +64,42 @@ Mutating code.
 
 # Propagation mechanism
 Worms: programs that propagate on hosts and system.
+# FINIRE Malware1
+
+## Worms characteristics(?)
+- Multiplatform
+- Multi-exploit: different exploit used to spread the worm.
+- Ultrafast spreading: Thanks to multi-exploit, the worm can also spread with 0-day vulnerabilities.
+- Polymorphic: Evades detection.
+- Metamorphic: changes in the code and behaviour, same results.
+- Transport vehicles: worms are used to transport real malware.
+- 0-day: used.
+### Client-side vulnerabilities
+Bugs in user applications that allow malware to be installed.
+Examples incldue:
+- Drive-by download: The user browses to a vulnerable web page that downloads and executes the malware without user interaction.
+- Watering-hole attack: Targeting a **specific** victim and exploiting a commonly website that the victim uses frequently.
+- Malvertising: Attacker buys ads that incorporates malware.
+- Clickjacking: Hijacking the user click, for example with "invisible" layers over a click.
+# Social engineering
+Tricking users to assist in the compromise of their own systems or personal information.
+## Types of social engineering
+- Spam emails with malicious documents.
+- Phishing attacks: fake websites/forms that steal user informations.
+	- A variant is Phishing over HTTPS, where the fake website has a HTTPS certificate, mainly thanks to free certificates from Let's Encrypt.
+	- A second variant is Phishing over social networks
+### Trojan horse
+An apparently useful program that incorporates some malicious code that is invoked.
+#### Trojan categories
+- The program still performs the original activities + a separate malicious activity.
+- Performs the original activity but modifies it to perform malicious activities instead or disguising other malicious activities, for example hiding malicious files in *ls*.
+- Completely replacing the original function.
+# Botnets
+Collection of bots that act in a coordinate manner.
+Those devices can be used for malicious purposes, like:
+- DDoS
+- Massive spam
+- Spreading malware
+- Manipulating reviews/polls
+## Bot
+Devices whose computational power (and network resources) are in control of an attacker.
