@@ -66,5 +66,32 @@ They define the level of security with reference to a certain property.
 - Subjects have a security level called **clearence**.
 - Object have a security level called **classification**.
 #### Confidentiality
-Information should not flow to a lower level
-(finire dopo)
+![[blp.png]]
+Information should not flow to a lower level.
+- Simple security
+  Subjects cannot read objects at a higher level.
+- \*-property
+  Subjects cannot write into objects classified at a lower level
+#### Covert Channels
+A way to *indirectly* transmit information, for example a shared resource that has it's access speed artificially modified to encode bits. This is a problem because it invalidates the **BLP** model because an attacker can leak everything if he has access to the level.
+#### Chinese Wall
+The idea is to prevent conflicts of interest:
+- Objects belong to **company datasets**
+- The **dataset** belongs to a conflict of interest class.
+Subjects can't access objects that are in the same conflict of interest class of other companies.
+## Role-based Access Control
+Adds a new layer with reference to [[#Discretionary Access Control (DAC)]]
+- Subjects now have **roles**.
+- Roles have access rights to objects.
+#### Access Matrix
+Access rights for each role and object (respectively rows and columns)
+#### Role assignment
+For each subject and role (respectively rows and columns), a subject can have multiple roles and multiple subjects can have a role.
+
+Users establish sessions with **the roles that they need** (with a least privilege principle).
+Roles might be **mutually exclusive** to enforce the separation of duties principle.
+## Attribute-Based Access Control
+Access is regulated through attributes.
+- Subject Attributes $SA_1, \dots, SA_k$ such as name, title, age, $\dots$ 
+- Object Attributes $OA_1, \dots, OA_k$ such as author, category, $\dots$
+- Environment Attributes $EA_1, \dots, EA_k$ such as date, settings, connections, $\dots$

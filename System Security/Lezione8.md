@@ -63,10 +63,13 @@ Same functionality with different code.
 Mutating code.
 
 # Propagation mechanism
-Worms: programs that propagate on hosts and system.
-# FINIRE Malware1
-
-## Worms characteristics(?)
+Worms: programs that propagate on hosts and system. They **expoit vulnerabilities** in client or server programs to gain access to new systems and spread themselves.
+They also **scan the network** to look for targets via:
+- Known vulnerable software (e.g. they see with **nmap** that there's a vulnerable version of a software with a port open).
+- Scanning the local network itself.
+- Scanning hosts connected to the host (*basically server*).
+A worm has to be caught in the **initial phase**, so that it's damage is contained (*see worm propagation model graph*).
+## Worms "technologies"
 - Multiplatform
 - Multi-exploit: different exploit used to spread the worm.
 - Ultrafast spreading: Thanks to multi-exploit, the worm can also spread with 0-day vulnerabilities.
@@ -103,3 +106,37 @@ Those devices can be used for malicious purposes, like:
 - Manipulating reviews/polls
 ## Bot
 Devices whose computational power (and network resources) are in control of an attacker.
+## Stealth malware
+### Rootkit
+A set of programs installed on a system to maintain covert access to that system with administrator privileges, while **hiding evidence** of its presence.
+Two types:
+- Persistent
+  Easier to detect because they're stored somewhere.
+- Memory based
+  Do not survive reboots but are harder to find.
+### Types of Rootkits
+- User mode
+  Intercepts API request and modifies the result, for example a rootkit could hide himself with the *ls* command.
+- Kernel mode
+  Hides itself (the process) from memory scanning programs (e.g. **htop**).
+  #### More on that
+  If a rootkit is able to modify system calls he can modify the original table to have entries to malicious functions instead of safe functions.
+  A program like a anti-virus that runs in user mode will **never** be able to detect it, hence why there exist anti virus (or similar software) that have to run in kernel mode (*looking at you vanguard*).
+- VM based
+  The rootkit runs operating system as a VM.
+  Basically the hypervisor becomes a rootkit and is **much harder** to detect.
+- External mode
+  The rootkit has **full access** to the hardware.
+## But how do I prevent that?
+- Valid access control, for example [[System Security/Lezione7#Mandatory Access Control (MAC)|Mandatory Access Control]]
+- The *evergreen* keep your system up to date.
+- User awareness to avoid [[#Social engineering|social engineering]].
+### What if prevention fails?
+As always:
+- Detect that a malware is present.
+- Identify the specific malware.
+- Remove all traces of it.
+### What if everything else fails?
+Backups and reinstall are you last bet.
+## Studying malware
+Sandbox are a fantastic tool for that, however new malware tries to hide itself from sandbox.
