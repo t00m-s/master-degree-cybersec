@@ -95,4 +95,3 @@ Collection of data relating to the behavior of legit users. This makes it possib
     *External but better*.
 - Distributed / hybrid
   Combines information from multiple sources in a central analyzer that is able to identify and respond to intrusion activity.
-  

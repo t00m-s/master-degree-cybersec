@@ -68,9 +68,9 @@ They define the level of security with reference to a certain property.
 #### Confidentiality
 ![[blp.png]]
 Information should not flow to a lower level.
-- Simple security
+#### Simple security
   Subjects cannot read objects at a higher level.
-- \*-property
+#### \*-property
   Subjects cannot write into objects classified at a lower level
 #### Covert Channels
 A way to *indirectly* transmit information, for example a shared resource that has it's access speed artificially modified to encode bits. This is a problem because it invalidates the **BLP** model because an attacker can leak everything if he has access to the level.
