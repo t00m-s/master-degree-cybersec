@@ -1,3 +1,5 @@
+# Summary
+![[summary.png]]
 # Cipher
 A cipher is defined through two functions:
 ## Encryption
@@ -51,5 +53,3 @@ Having a fixed nonce means trouble, because an attacker can forge the second pla
 Since same nonce means same key $K$:
 $P_1 \oplus K = C_1$, $P_2 \oplus K = C_2$ then:
 $P_1 \oplus P_2 = C_1 \oplus C_2 \rightarrow P_2 = P_1 \oplus C_1 \oplus C_2$
-# Summary
-![[summary.png]]

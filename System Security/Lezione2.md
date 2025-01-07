@@ -1,3 +1,10 @@
+# Summary
+- Simplicity: Less complexity reduces bugs.
+- Fail-safe defaults: Deny by default, whitelist preferred.
+- Least privilege: Grant minimal access necessary.
+- Usability: Security should not hinder productivity.
+- Isolation: Separate information/resources (e.g., containers).
+- Modularity: Independent modules ensure better checks and security.
 # Principles of security design
 ## Simplicity
 The design of security measures (either hardware or software) must be **as simple and small** as possible.
