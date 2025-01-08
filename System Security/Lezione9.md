@@ -57,3 +57,44 @@ Identify patterns by capturing packets and their flow.
 - Check human interaction (captcha)
 - Update systems
 - Replicate them to increase reliability and resilience against DDoS
+---
+# Summary
+#### **Definition**
+A DoS attack compromises the availability of networks, systems, or applications by exhausting resources like bandwidth, system capacity, or application services.
+#### **Types of DoS Attacks**
+1. **Network Bandwidth Flooding**:
+    - Overwhelms network capacity by sending excessive packets.
+    - Examples: ICMP flood, UDP flood, TCP flood.
+    - Attackers often spoof source IPs to obscure their identity.
+2. **System Resource Overload**:
+    - Targets server capacity, e.g., overflowing TCP connection tables.
+    - **SYN Spoof Attack**: Exploits the TCP handshake by sending SYN packets with spoofed addresses, leaving connections incomplete.
+3. **Application Resource Attacks**:
+    - Exploit vulnerabilities or server features.
+    - Example: **Slowloris Attack**, which opens multiple HTTP requests without completing them.
+4. **Distributed DoS (DDoS)**:
+    - Multiple devices, often botnets, launch coordinated attacks for greater impact.
+#### **Special Techniques**
+1. **Reflection Attack**:
+    - Sends packets to intermediaries with a spoofed victim’s IP, causing intermediaries to flood the victim with responses.
+2. **Amplification Attack**:
+    - Broadcasts a single spoofed request, causing many hosts to respond to the victim, amplifying the attack’s volume.
+#### **Defense Strategies**
+1. **Preventing Spoofed Addresses**:
+    - Filter spoofed addresses at the origin:
+        - Use IP range checks.
+        - Implement ingress filtering to verify packet paths.
+    - Challenges include strictness and network configurations like multihoming.
+2. **Preventing SYN Spoofing**:
+    - Use stateless protocols, encoding state information in sequence numbers.
+3. **Mitigation Techniques**:
+    - Rate limiting for ICMP, UDP, and SYN packets.
+    - Drop connections during table overflow (may affect legitimate users).
+4. **Detection**:
+    - Analyze packet patterns and traffic flow to identify anomalies.
+5. **Additional Measures**:
+    - Block broadcast packets.
+    - Limit or disable unnecessary services.
+    - Implement CAPTCHAs to differentiate human users.
+    - Regularly update systems.
+    - Use system replication to improve resilience.

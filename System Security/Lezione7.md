@@ -1,44 +1,3 @@
-# Summary
-#### **Definition and Key Components**
-- **Access Control**: Protection of system resources against unauthorized access as per a defined security policy.
-- **Key Components**:
-  1. **Authentication**: Verification of user credentials.
-  2. **Authorization**: Granting permissions to access resources.
-  3. **Audit**: Independent review of system records to ensure compliance and detect breaches.
-#### **Access Rights**
-- **Read**: View information.
-- **Write**: Modify or delete data.
-- **Execute**: Run an object.
-- **Delete**: Remove an object.
-- **Create**: Add an object.
-- **Search**: Query an object.
-### Access Control Policies
-#### **Discretionary Access Control (DAC)**
-- **Access Matrix**: Defines rights for subjects and objects but is impractical due to complexity.
-- **Access Control List (ACL)**: Rights per object; easy to see who can access an object but hard to find all rights for a subject.
-- **Capabilities**: Rights per subject; inverse pros/cons of ACL.
-- **Authorization Table**: Combines pros of ACL and Capabilities by indexing rights via subject, object, or both.
-#### **Mandatory Access Control (MAC)**
-- **Rules**: Fixed and unchangeable by subjects.
-- **Security Levels**: Define access based on clearance (subjects) and classification (objects).
-- **Bell-LaPadula Model**:
-  1. **Simple Security**: No read-up (subjects can’t read higher-classified data).
-  2. **Star Property**: No write-down (subjects can’t write to lower-classified data).
-  3. **Covert Channels**: Indirect information leakage invalidates BLP.
-  4. **Chinese Wall**: Prevents conflicts of interest by restricting access within conflict-of-interest classes.
-### Role-Based Access Control (RBAC)
-- **Roles**: Define access rights.
-- **Role Assignment**: Subjects are assigned roles; roles define access rights.
-- **Principles**:
-  1. **Least Privilege**: Users activate only necessary roles.
-  2. **Separation of Duties**: Mutually exclusive roles enforce responsibility distribution.
-### Attribute-Based Access Control (ABAC)
-- **Attributes**:
-  1. **Subject Attributes**: Name, title, age, etc.
-  2. **Object Attributes**: Author, category, etc.
-  3. **Environment Attributes**: Date, settings, connections, etc.
-- **Rules**: Define access rights based on attribute combinations.
----
 # Access Control
 ## Definition
 From RFC 4949:
@@ -136,3 +95,44 @@ Access is regulated through attributes.
 - Subject Attributes $SA_1, \dots, SA_k$ such as name, title, age, $\dots$ 
 - Object Attributes $OA_1, \dots, OA_k$ such as author, category, $\dots$
 - Environment Attributes $EA_1, \dots, EA_k$ such as date, settings, connections, $\dots$
+---
+# Summary
+#### **Definition and Key Components**
+- **Access Control**: Protection of system resources against unauthorized access as per a defined security policy.
+- **Key Components**:
+  1. **Authentication**: Verification of user credentials.
+  2. **Authorization**: Granting permissions to access resources.
+  3. **Audit**: Independent review of system records to ensure compliance and detect breaches.
+#### **Access Rights**
+- **Read**: View information.
+- **Write**: Modify or delete data.
+- **Execute**: Run an object.
+- **Delete**: Remove an object.
+- **Create**: Add an object.
+- **Search**: Query an object.
+### Access Control Policies
+#### **Discretionary Access Control (DAC)**
+- **Access Matrix**: Defines rights for subjects and objects but is impractical due to complexity.
+- **Access Control List (ACL)**: Rights per object; easy to see who can access an object but hard to find all rights for a subject.
+- **Capabilities**: Rights per subject; inverse pros/cons of ACL.
+- **Authorization Table**: Combines pros of ACL and Capabilities by indexing rights via subject, object, or both.
+#### **Mandatory Access Control (MAC)**
+- **Rules**: Fixed and unchangeable by subjects.
+- **Security Levels**: Define access based on clearance (subjects) and classification (objects).
+- **Bell-LaPadula Model**:
+  1. **Simple Security**: No read-up (subjects can’t read higher-classified data).
+  2. **Star Property**: No write-down (subjects can’t write to lower-classified data).
+  3. **Covert Channels**: Indirect information leakage invalidates BLP.
+- **Chinese Wall**: Prevents conflicts of interest by restricting access within conflict-of-interest classes.
+### Role-Based Access Control (RBAC)
+- **Roles**: Define access rights.
+- **Role Assignment**: Subjects are assigned roles; roles define access rights.
+- **Principles**:
+  1. **Least Privilege**: Users activate only necessary roles.
+  2. **Separation of Duties**: Mutually exclusive roles enforce responsibility distribution.
+### Attribute-Based Access Control (ABAC)
+- **Attributes**:
+  1. **Subject Attributes**: Name, title, age, etc.
+  2. **Object Attributes**: Author, category, etc.
+  3. **Environment Attributes**: Date, settings, connections, etc.
+- **Rules**: Define access rights based on attribute combinations.

@@ -70,3 +70,53 @@ Controls access to features of the database.
 	- WITH GRANT OPTION means that a user that obtains these kind of privileges can also grant them to other users.
 - REVOKE
 	- CASCADE is used to revoke all permissions  from users that obtained permission through the revoked user.
+---
+# Summary
+## Importance of Database Security
+Databases are critical as they centralize large amounts of data and are accessed using complex systems like SQL.
+## Relational Databases
+- **Tables**: Data organized in an $N \times M$ matrix.
+- **Field**: A column in a table.
+- **Record**: A row in a table.
+- **Primary Key**: Unique identifier for a row.
+- **Foreign Key**: A primary key of one table used as a field in another table.
+- **View**: A virtual table that limits data visibility for security purposes.
+## Attacks on Databases
+### SQL Injection
+Malicious SQL input triggers unexpected behavior in an application.
+#### Common Injection Locations
+1. **User Input**: Forms used to create SQL queries.
+2. **Server Variables**: Headers logged for statistics may be modified.
+3. **Second-Order Injections**: Data injected into the database affects future queries.
+4. **Cookies**: Manipulated cookies influence SQL queries.
+5. **Physical User Input**: Data from devices like barcodes or RFID tags.
+### Types of SQL Injection Attacks
+1. **Inband**:
+   - **Tautology Attack**: Injects statements that always evaluate to true.
+```sql
+' OR 1=1 --
+```
+- **End-of-Line Comment**: Nullifies legitimate code.
+```sql
+--
+```
+   - **Piggybacked Queries**: Adds unintended queries.
+```sql
+; DROP TABLE ...
+```
+2. **Inferential**:
+   - **Incorrect SQL Injection**: Descriptive error pages reveal sensitive information.
+   - **Blind SQL Injection**: Data inferred without visible errors.
+## Countermeasures
+1. **Whitelisting Input**: Validate acceptable input.
+2. **Strict Typing**: Enforce strict input data types.
+3. **Prepared Statements**: Avoid direct input in queries.
+4. **Typed APIs**: Use APIs that enforce typing.
+5. **Trusted Input**: Accept data only from trusted sources.
+6. **Sanitization**: As a last resort, sanitize inputs.
+## Database Access Control
+### Privileges Management
+1. **GRANT**: Assigns privileges.
+   - `WITH GRANT OPTION`: Allows users to grant their privileges to others.
+2. **REVOKE**: Removes privileges.
+   - `CASCADE`: Revokes permissions from all users granted by the original user.

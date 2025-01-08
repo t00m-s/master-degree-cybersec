@@ -95,3 +95,61 @@ Collection of data relating to the behavior of legit users. This makes it possib
     *External but better*.
 - Distributed / hybrid
   Combines information from multiple sources in a central analyzer that is able to identify and respond to intrusion activity.
+---
+# Summary
+## Purpose
+Analyzing information from a computer or network to identify potential intrusions.
+## Possible Intruders
+1. **Cybercriminals**: Motivated by financial gain.
+2. **Activists**: Driven by political causes.
+3. **State-sponsored Actors**: Conduct espionage activities for governments.
+4. **Hobbyists**: Motivated by technical challenges.
+## Behavior of Intruders
+1. **Information Gathering**: Scanning websites and using tools to collect data.
+2. **Initial Access**: Exploiting services or guessing credentials.
+3. **Privilege Escalation**:
+   - Leaking sensitive information.
+   - Maintaining future access.
+   - Covering tracks (e.g., removing logs).
+## Intrusion Detection Systems (IDS)
+Hardware or software designed to analyze data for signs of intrusion.
+### Data Sources for IDS
+- **Network Packets**: Traffic analysis.
+- **Logs**: System logs for suspicious activities.
+- **Syscall Traces**: Tracks interactions with the operating system.
+### Importance of IDS
+- Limits damage by detecting intrusions early.
+- Acts as a deterrent.
+- Helps improve security for future attacks.
+### False Detection Risks
+1. **False Positives**: Legitimate users flagged as intruders.
+2. **False Negatives**: Intrusions not flagged as malicious.
+- **Base Rate Fallacy**: Overemphasis on specific cases over statistical relevance.
+## Analysis Approaches
+1. **Detecting Anomalies**:
+   - Builds a model of normal user behavior.
+   - Flags deviations as potential intrusions.
+2. **Heuristic Detection**:
+   - Uses known attack patterns (signatures).
+   - Relies on rules specific to the protected system.
+   - Limitations: Cannot detect 0-day attacks.
+3. **Building Models**:
+   - **Statistical Approach**: Simple and efficient but inflexible.
+   - **Knowledge-Based**: Robust and flexible but hard to develop.
+   - **Machine Learning**: Automated and flexible but expensive and vulnerable to adversarial attacks.
+## Types of IDS
+1. **Host-Based IDS (HIDS)**:
+   - Monitors single host activities.
+   - Examples: Process IDs, syscall traces, log files, file checksums.
+   - Detects integrity attacks but may have high overhead.
+2. **Network-Based IDS (NIDS)**:
+   - Monitors traffic at specific points on a network (e.g., Snort).
+   - **Anomaly-Based NIDS**:
+     - Detects DoS attacks, scanning, and worms.
+   - **Signature-Based NIDS**:
+     - Identifies policy violations, unexpected services, spoofed IPs, and fragmented packets.
+3. **Distributed/Hybrid IDS**:
+   - Combines data from multiple sources into a central analyzer for better detection and response.
+### Placement of NIDS
+- **External Perimeter**: Detects external intrusions and outgoing malicious traffic.
+- **Internal Perimeter**: More comprehensive, detects both internal and external threats.

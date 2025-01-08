@@ -140,3 +140,123 @@ As always:
 Backups and reinstall are you last bet.
 ## Studying malware
 Sandbox are a fantastic tool for that, however new malware tries to hide itself from sandbox.
+
+# Summary
+# Malware definition
+Abbreviation of *Malicious Software*, a program that is *covertly inserted* (hides) in another program with malicious intents, such as:
+- Destroying user data
+- Executing other software with malicious intent (e.g. running *rm -rf /*)
+- Compromising the CIA triad.
+## Classification
+### Propagation mechanism
+- Infection of existing executable content (programs).
+- Exploiting vulnerabilities.
+- Social engineering: e.g., spreading with email attachments.
+### Payload actions (what the malware does)
+- Corrupting data.
+- Stealing information.
+- Remaining stealthy for future actions.
+### Types of malware
+- Self-contained.
+- Parasitic: Spreads to other programs.
+- Replicating.
+- Non-replicating.
+# Attack kits
+Toolkits for malware development:
+- Multiple propagation methods.
+- Multiple payloads.
+- Can be used with 0-day vulnerabilities.
+# Advanced Persistent Threat
+Targeted attacks with the following characteristics:
+- **Advanced**: Wide variety of techniques and malware.
+- **Persistent**: Prolonged presence to maximize damage.
+- **Threat**: Target-specific compromise.
+
+# Infection propagation mechanism
+**Virus**: Malware that infects other programs, replicates by attaching its code to others, and inherits the privileges of the host program.
+### Virus limitations
+- Constrained by **access control** and **least-privilege** policies.
+## Structure of a virus
+1. **Infection mechanism**: Replication process.
+2. **Trigger**: Activation conditions.
+3. **Payload**: Actions performed by the virus.
+
+## Life cycle of a virus
+- **Dormant phase**: Waiting for activation.
+- **Propagation phase**: Replicating into other programs.
+- **Trigger phase**: Activation of the virus.
+- **Execution phase**: Execution of the payload.
+### Macro virus
+- Attaches to documents and leverages macro programming capabilities (e.g., VBScript).
+- **Why documents?**
+  - Most exchanged file type.
+  - Platform-independent.
+## Concealment strategies
+### Encryption
+- Encrypts most of its code except the decryption logic.
+### Stealth
+- Mutates code by adding or rearranging instructions.
+### Polymorphic
+- Same functionality with different code.
+### Metamorphic
+- Code changes with every iteration.
+# Propagation mechanism
+**Worms**: Programs that propagate by exploiting vulnerabilities in client/server programs, scanning networks for targets.
+### Worm technologies
+- **Multiplatform**: Works across systems.
+- **Multi-exploit**: Uses different vulnerabilities.
+- **Ultrafast spreading**: Exploits 0-day vulnerabilities.
+- **Polymorphic**: Evades detection.
+- **Metamorphic**: Alters behavior but achieves the same outcome.
+- **Transport vehicles**: Delivers other malware.
+- **0-day**: Utilizes unpatched vulnerabilities.
+### Client-side vulnerabilities
+- **Drive-by download**: Malware downloads when visiting a site.
+- **Watering-hole attack**: Targets commonly visited websites.
+- **Malvertising**: Infects users via malicious advertisements.
+- **Clickjacking**: Hijacks clicks using invisible layers.
+# Social engineering
+Tricks users into compromising their systems or data.
+## Types of social engineering
+- **Spam emails**: Contain malicious attachments.
+- **Phishing attacks**: Fake websites/forms steal user data.
+  - **Phishing over HTTPS**: Uses HTTPS certificates for fake sites.
+  - **Social media phishing**: Targets users on social platforms.
+### Trojan horse
+- Disguised as a useful program but contains malicious code.
+#### Trojan categories
+1. Performs original tasks and malicious tasks separately.
+2. Modifies original functionality to include malicious actions.
+3. Replaces the original functionality entirely.
+# Botnets
+Networks of compromised devices acting in coordination for malicious purposes:
+- DDoS attacks.
+- Spreading spam or malware.
+- Manipulating reviews or polls.
+## Bot
+A compromised device controlled by an attacker.
+## Stealth malware
+### Rootkits
+- Maintain covert access with administrative privileges while hiding their presence.
+#### Rootkit types
+1. **Persistent**: Stored and easier to detect.
+2. **Memory-based**: Do not survive reboots but are harder to detect.
+### Rootkit strategies
+- **User mode**: Modifies API requests (e.g., hiding files from `ls`).
+- **Kernel mode**: Alters system call tables for malicious purposes.
+- **VM-based**: Operates as a hypervisor and is hard to detect.
+- **External mode**: Full hardware access.
+## Preventing rootkits
+- Implement valid **access control** (e.g., MAC).
+- Regularly update systems.
+- Educate users to avoid social engineering.
+## When prevention fails
+1. Detect malware presence.
+2. Identify the malware type.
+3. Remove all traces.
+## Last resort
+- Use backups.
+- Reinstall the system.
+## Studying malware
+- Use sandboxes to analyze malware behavior.
+- Note: New malware may attempt to evade sandbox detection.

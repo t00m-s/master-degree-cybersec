@@ -80,3 +80,75 @@ Software between the hardware and virtual machines, provides abstraction of phys
 "Runs before the OS", **native virtualization**.
 ### Type 2 
 "Runs inside the OS", **hosted virtualization**.
+
+--- 
+# Summary
+## Overview
+An operating system (OS) must ensure security even when applications contain vulnerabilities. Security is treated as a **hardening process**:
+- Use whitelists for approved applications.
+- Regularly patch non-default applications and the OS itself.
+- Apply the **least privilege principle** by restricting admin privileges.
+## Layers of Security
+1. **Physical Hardware**: Securing the physical components.
+2. **Operating System**: The code running on bare metal.
+3. **Applications and Utilities**: Interfaces interacting with the OS.
+## Steps for OS Security
+### 1. Security Planning
+- Conducted from the beginning to reduce costs and maximize effectiveness.
+- Key considerations:
+  - System purpose.
+  - User categories.
+  - Authentication methods.
+  - Admin access methods (local or remote, e.g., SSH).
+  - Additional mechanisms like firewalls or loggers.
+### 2. System Installation
+- Performed in an isolated environment to reduce vulnerabilities.
+- Use **secure boot** to prevent BIOS tampering and enforce authorized boot media.
+- Enable encryption during installation to protect against tampering.
+### 3. Trusted Code and Patching
+- Handle drivers cautiously as they often have kernel-level privileges.
+- Regularly install security patches and updates.
+  - Avoid automatic updates in environments like Arch Linux where they might break applications.
+### 4. Unnecessary Services and Access Control
+- Disable or remove unneeded services to minimize attack vectors.
+- Use access control mechanisms:
+  - **DAC**, **RBAC**, or **MAC**.
+- Restrict administrative privileges:
+  - Assign to minimal users.
+  - Log all admin actions.
+  - Use privileges only when required.
+### 5. Additional Security Measures
+- Anti-virus software.
+- Host-based firewalls and IDS to filter and monitor traffic.
+- Application whitelists to prevent malware execution.
+- Tools for vulnerability scanning.
+### 6. Application Security
+- Review default configurations for vulnerabilities.
+- Enforce **minimum privilege** policies.
+### 7. Logging
+- Essential for tracking both normal and malicious activities.
+- Use **log rotation** to manage large volumes of logs by archiving or deleting based on conditions like size or date.
+- Automate log analysis to handle the data efficiently.
+### 8. Backups
+- Regularly back up data to minimize losses during recovery from breaches or disasters.
+- Often required for legal compliance and disaster recovery.
+## Case Study
+### Linux
+- Automatic updates via package managers.
+- Configuration stored in dotfiles or `/etc/`.
+- Permissions managed with the **rwx** triad.
+- User information stored in `/etc/passwd`, `/etc/shadow`, and `/etc/group`.
+- Authentication managed with **PAM** (Pluggable Authentication Module).
+- Limit unnecessary login access and SUID programs (SUID grants creator privileges).
+- Use tools like **nmap** and **metasploit** for security assessments.
+- Employ **MAC** implementations like AppArmor and SELinux.
+- Features like `chroot jail` restrict service access to a specific root directory.
+### Windows
+- Uses **Windows Update** for patch management.
+- Configuration managed via the **registry** (key-value database).
+- Logging and security practices are less discussed here (*author bias detected*).
+## Virtualization
+### Hypervisors
+- Software providing resource abstraction and enabling multiple VMs on one physical machine.
+- **Type 1**: Native virtualization running directly on hardware.
+- **Type 2**: Hosted virtualization running within an existing OS.

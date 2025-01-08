@@ -1,11 +1,3 @@
-# Summary
-- **Relevance**: Information systems are interconnected, making them vulnerable to attacks.
-- **Key Properties**: Confidentiality (no unauthorized access), Integrity (authorized modifications only), Availability (services not denied to authorized users).
-- **Additional Properties**: Authenticity (correct identification), Accountability (tracing actions to entities).
-- **Impact Levels**: Low (noticeable but minor damage), Medium (significant but recoverable damage), High (critical functions fail).
-- **Classes of Attacks**:
-    - **Active**: Alter resources (e.g., modification).
-    - **Passive**: Learn information without alteration (e.g., interception).
 # Why is Computer (System) Security relevant?
 Information systems are pervasive and extremely connected, meaning that an attack to a system can do more harm than before, *let's just think about attacking a bank, if you manage to steal credit card information.*
 # Computer Security Definition
@@ -78,3 +70,12 @@ Done by an unauthorized user.
 - An attacker interrupts a service (e.g. DDOS).
 - Availability is gone.
 - Active attack.
+---
+# Summary
+- **Relevance**: Information systems are interconnected, making them vulnerable to attacks.
+- **Key Properties**: Confidentiality (no unauthorized access), Integrity (authorized modifications only), Availability (services not denied to authorized users).
+- **Additional Properties**: Authenticity (correct identification), Accountability (tracing actions to entities).
+- **Impact Levels**: Low (noticeable but minor damage), Medium (significant but recoverable damage), High (critical functions fail).
+- **Classes of Attacks**:
+    - **Active**: Alter resources (e.g., modification).
+    - **Passive**: Learn information without alteration (e.g., interception).

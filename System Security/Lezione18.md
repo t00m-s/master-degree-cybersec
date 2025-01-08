@@ -5,7 +5,8 @@ CPUs typically do operations by splitting them in subparts, like:
 - Fetching
 - Decoding
 - Executing
- CPUs need to be fast. So engineers came up with lots of solutions to speed up them, including:
+
+CPUs need to be fast. So engineers came up with lots of solutions to speed up them, including:
  - Pipeline
  - Cache
 ### Cache
@@ -34,7 +35,7 @@ If x is not in cache, the CPU needs to fetch it from the memory, which is really
 So CPUs try to predict the result of the branch: they calculate the most probable branch the if will take and execute if before knowing the actual result.
 If it was correct, the execution is already done. If it wasn't, the CPU does a rollback and executes the other branch.
 This feature is done by the branch predictor of the CPU.
-The branch predictor does it's computation by observing the behavior of the CPU.     ```
+The branch predictor does it's computation by observing the behavior of the CPU.
 ```c
 for (...) {
 	if () {
@@ -48,7 +49,8 @@ What are side channels?
 If an attacker observes the execution of a program, they can learn some information.
 The side channel is any observable side effect of computation that an attacker could measure and possibly influence.
 The most simple side channel is time based: an attacker could try to discover a secret key for example by measuring the time while the program compares a key with the correct one.
-In fact, cryptographic-safe functions usually have a constant-time execution. ## Flush+Reload
+In fact, cryptographic-safe functions usually have a constant-time execution. 
+## Flush+Reload
 - https://www.usenix.org/conference/usenixsecurity14/technical-sessions/presentation/yarom
 - Flush+Reload exploits caches to learnsecrets.
 - Take an attacker that can measure the execution time of a program, choose a victim.
